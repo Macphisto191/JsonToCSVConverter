@@ -54,10 +54,8 @@ public class Main {
 
         double threshold = Math.ceil((sortedSellers.size() * percentage) / 100);
 
-        List<Seller> finalSellers = sortedSellers.subList(0, (int) threshold);
 
-
-        fillingCSVFile(periodLimit, printWriter, finalSellers);
+        fillingCSVFile(periodLimit, printWriter, sortedSellers, threshold);
 
         printWriter.flush();
         printWriter.close();
@@ -66,8 +64,9 @@ public class Main {
 
     }
 
-    private static void fillingCSVFile(int periodLimit, PrintWriter printWriter, List<Seller> finalSellers) {
-        finalSellers.stream().filter(s -> s.getSalesPeriod() <= periodLimit).forEach(s -> {
+    private static void fillingCSVFile(int periodLimit, PrintWriter printWriter, List<Seller> sortedSellers, double threshold) {
+        sortedSellers.stream().filter(s -> s.getSalesPeriod() <= periodLimit).limit((long) threshold).forEach(
+                s -> {
 
             String name = s.getName();
             double score = s.finalScore();
@@ -82,7 +81,7 @@ public class Main {
                 .sorted(Comparator.comparingDouble(Seller::finalScore)).collect(Collectors.toList());
 
         Collections.reverse(sortedSellers);
-        sortedSellers.sort(Comparator.comparingInt(Seller::getSalesPeriod));
+//        sortedSellers.sort(Comparator.comparingInt(Seller::getSalesPeriod));
         return sortedSellers;
     }
 
