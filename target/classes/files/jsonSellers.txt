@@ -1,0 +1,44 @@
+[
+{
+"name": "John Smith",
+"totalSales": 250,
+"salesPeriod": 10,
+"experienceMultiplier": 0.5
+},
+{
+"name": "David Prowless",
+"totalSales": 250,
+"salesPeriod": 10,
+"experienceMultiplier": 0.5
+},
+{
+"name": "Franz Kafka",
+"totalSales": 45,
+"salesPeriod": 13,
+"experienceMultiplier": 1.8
+},
+{
+"name": "Robert Del Naja",
+"totalSales": 2500,
+"salesPeriod": 9,
+"experienceMultiplier": 1.4
+},
+{
+"name": "Roger Waters",
+"totalSales": 580	,
+"salesPeriod": 8,
+"experienceMultiplier": 2.6
+},
+{
+"name": "Roberto Baggio",
+"totalSales": 25,
+"salesPeriod": 8,
+"experienceMultiplier": 3.8
+},
+{
+"name": "Mike Starr",
+"totalSales": 700,
+"salesPeriod": 23,
+"experienceMultiplier": 1.2
+}
+]
